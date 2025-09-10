@@ -148,11 +148,12 @@ from langchain.prompts import PromptTemplate
 from langchain_community.llms import HuggingFaceEndpoint
 from langchain.chat_models import ChatOpenAI
 from tqdm import tqdm
-from langchain_community.chat_models import ChatOpenRouter
+from langchain_community.chat_models import ChatOpenAI
 
-llm = ChatOpenRouter(
+llm = ChatOpenAI(
     model_name="openai/gpt-oss-20b",
-    api_key=st.secrets["OPENROUTER_API_KEY"],
+    openai_api_key=st.secrets["OPENROUTER_API_KEY"],
+    openai_api_base=st.secrets["OPENROUTER_API_BASE"],
     temperature=0.7
 )
 
