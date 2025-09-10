@@ -148,15 +148,11 @@ from langchain.prompts import PromptTemplate
 from langchain_community.llms import HuggingFaceEndpoint
 from langchain.chat_models import ChatOpenAI
 from tqdm import tqdm
-from dotenv import load_dotenv
 
-# .env ファイルを読み込む
-load_dotenv()
-
-llm = ChatOpenAI(
-    model="openai/gpt-oss-20b",  # OpenRouter上のモデル名
-    openai_api_key=os.getenv("OPENROUTER_API_KEY"),  # OpenRouterのAPIキー
-    openai_api_base="https://openrouter.ai/api/v1",  # OpenAI互換のエンドポイント
+llm =  ChatOpenAI(
+    model="openai/gpt-oss-20b",
+    openai_api_key=st.secrets["OPENROUTER_API_KEY"],
+    openai_api_base=st.secrets["OPENROUTER_API_BASE"],
     temperature=0.7
 )
 
