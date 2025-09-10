@@ -64,7 +64,6 @@ st.dataframe(df)
 #クラスタごとの平均値
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
-import matplotlib.pyplot as plt
 import seaborn as sns
 
 # データフレーム（前ステップで生成済みの df を使用）
@@ -86,7 +85,8 @@ cluster_summary = df.groupby("クラスタ")[features].mean().round(1)
 st.subheader("クラスターごとの平均値")
 st.dataframe(cluster_summary)
 
-import japanize_matplotlib
+#import japanize_matplotlib
+
 # PCAで次元削減（2Dプロット用）
 from sklearn.decomposition import PCA
 
