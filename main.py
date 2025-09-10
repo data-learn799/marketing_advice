@@ -150,7 +150,7 @@ from langchain.chat_models import ChatOpenAI
 from tqdm import tqdm
 
 llm =  ChatOpenAI(
-    model="openai/gpt-oss-20b",
+    model_name="openai/gpt-oss-20b",
     openai_api_key=st.secrets["OPENROUTER_API_KEY"],
     openai_api_base=st.secrets["OPENROUTER_API_BASE"],
     temperature=0.7
